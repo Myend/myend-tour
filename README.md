@@ -2,6 +2,8 @@
 
 [![CircleCI](https://circleci.com/gh/pulsardev/vue-tour/tree/master.svg?style=svg)](https://circleci.com/gh/pulsardev/vue-tour/tree/master)
 
+> Myend Tour is a fork of Vue Tour, following is Vue Tour's documentation.
+
 > Vue Tour is a lightweight, simple and customizable tour plugin for use with Vue.js.
 > It provides a quick and easy way to guide your users through your application.
 

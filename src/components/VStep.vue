@@ -28,7 +28,7 @@
 
 <script>
 import { createPopper } from '@popperjs/core'
-import jump from 'jump.js'
+// import jump from 'jump.js'
 import sum from 'hash-sum'
 import { DEFAULT_STEP_OPTIONS, HIGHLIGHT } from '../shared/constants'
 
@@ -135,14 +135,19 @@ export default {
     enableScrolling () {
       if (this.params.enableScrolling) {
         if (this.step.duration || this.step.offset) {
-          let jumpOptions = {
-            duration: this.step.duration || 1000,
-            offset: this.step.offset || 0,
-            callback: undefined,
-            a11y: false
-          }
+          // let jumpOptions = {
+          //   duration: this.step.duration || 1000,
+          //   offset: this.step.offset || 0,
+          //   callback: undefined,
+          //   a11y: false
+          // }
 
-          jump(this.targetElement, jumpOptions)
+          // jump(this.targetElement, jumpOptions)
+
+          const yOffset = this.step.offset
+          const y = this.targetElement.getBoundingClientRect().top + window.pageYOffset + yOffset
+
+          window.scrollTo({ top: y, behavior: 'smooth' })
         } else {
           // Use the native scroll by default if no scroll options has been defined
           this.targetElement.scrollIntoView({ behavior: 'smooth' })
