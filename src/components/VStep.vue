@@ -143,7 +143,7 @@ export default {
           // }
 
           // jump(this.targetElement, jumpOptions)
-
+          console.log('Custon scroll')
           const yOffset = this.step.offset
           const y = this.targetElement.getBoundingClientRect().top + window.pageYOffset + yOffset
 
