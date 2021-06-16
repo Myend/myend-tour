@@ -1,4 +1,4 @@
-# Vue Tour
+# Myend Tour
 
 [![CircleCI](https://circleci.com/gh/pulsardev/vue-tour/tree/master.svg?style=svg)](https://circleci.com/gh/pulsardev/vue-tour/tree/master)
 
