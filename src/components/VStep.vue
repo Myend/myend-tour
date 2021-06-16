@@ -143,15 +143,26 @@ export default {
           // }
 
           // jump(this.targetElement, jumpOptions)
-          console.log('Custon scroll')
           const yOffset = this.step.offset
           const y = this.targetElement.getBoundingClientRect().top + window.pageYOffset + yOffset
-
-          window.scrollTo({ top: y, behavior: 'smooth' })
+          console.log('Custon scroll: ' + y)
+          const parent = this.getScrollParent(this.targetElement)
+          parent.scrollTo({ top: y, behavior: 'smooth' })
         } else {
           // Use the native scroll by default if no scroll options has been defined
           this.targetElement.scrollIntoView({ behavior: 'smooth' })
         }
+      }
+    },
+    getScrollParent (node) {
+      if (node == null) {
+        return null
+      }
+
+      if (node.scrollHeight > node.clientHeight) {
+        return node
+      } else {
+        return this.getScrollParent(node.parentNode)
       }
     },
     isHighlightEnabled () {
