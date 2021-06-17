@@ -223,7 +223,7 @@ export default {
 
 <style lang="scss" scoped>
   .v-step {
-    // background: #ffffff; //#50596c; /* #ffc107, #35495e */
+    background: #ffffff; //#50596c; /* #ffc107, #35495e */
     // color: #000000;
     max-width: 320px;
     border-radius: 10px;
@@ -261,7 +261,7 @@ export default {
 
     &--dark {
       &:before {
-        // background: #ffffff; //#454d5d;
+        background: #ffffff; //#454d5d;
       }
     }
   }
