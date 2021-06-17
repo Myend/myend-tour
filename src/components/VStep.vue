@@ -17,7 +17,7 @@
       </div>
     </slot>
 
-    <slot name="actions">
+    <slot name="actions" class="mt-10">
       <div class="v-step__buttons">
         <button @click.prevent="skip" v-if="!isLast && isButtonEnabled('buttonSkip')" class="v-step__button v-step__button-skip">{{ labels.buttonSkip }}</button>
         <button @click.prevent="previousStep" v-if="!isFirst && isButtonEnabled('buttonPrevious')" class="v-step__button v-step__button-previous">{{ labels.buttonPrevious }}</button>
