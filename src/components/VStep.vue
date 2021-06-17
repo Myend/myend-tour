@@ -1,5 +1,9 @@
 <template>
   <div v-bind:class="{ 'v-step--sticky': isSticky }" class="v-step" :id="'v-step-' + hash" :ref="'v-step-' + hash">
+    <slot name="embed">
+        <div v-if="step.embed" v-html="step.embed" class="v-step__embed"></div>
+    </slot>
+
     <slot name="header">
       <div v-if="step.header" class="v-step__header">
         <div v-if="step.header.title" v-html="step.header.title"></div>
@@ -219,10 +223,10 @@ export default {
 
 <style lang="scss" scoped>
   .v-step {
-    background: #50596c; /* #ffc107, #35495e */
-    color: white;
+    // background: #ffffff; //#50596c; /* #ffc107, #35495e */
+    // color: #000000;
     max-width: 320px;
-    border-radius: 3px;
+    border-radius: 10px;
     box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px,
       rgba(0, 0, 0, 0) 0px 0px 0px 0px,
       rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
@@ -257,7 +261,7 @@ export default {
 
     &--dark {
       &:before {
-        background: #454d5d;
+        // background: #ffffff; //#454d5d;
       }
     }
   }
@@ -290,9 +294,9 @@ export default {
   .v-step__header {
     margin: -1rem -1rem 0.5rem;
     padding: 0.5rem;
-    background-color: #454d5d;
-    border-top-left-radius: 3px;
-    border-top-right-radius: 3px;
+    //background-color: #454d5d;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
   }
 
   .v-step__content {
@@ -301,9 +305,9 @@ export default {
 
   .v-step__button {
     background: transparent;
-    border: .05rem solid white;
+    border: .05rem solid #454d5d;
     border-radius: .1rem;
-    color: white;
+    color: #454d5d;
     cursor: pointer;
     display: inline-block;
     font-size: .8rem;
@@ -319,8 +323,8 @@ export default {
     white-space: nowrap;
 
     &:hover {
-      background-color: rgba(white, 0.95);
-      color: #50596c;
+      background-color: rgba(#454d5d, 0.95);
+      color: #ffffff;
     }
   }
 </style>
