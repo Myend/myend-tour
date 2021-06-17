@@ -6,13 +6,13 @@
 
     <slot name="header">
       <div v-if="step.header" class="v-step__header">
-        <div v-if="step.header.title" v-html="step.header.title"></div>
+        <div v-if="step.header.title" class="text-h6 font-weight-regular text--primary">{{step.header.title}}</div>
       </div>
     </slot>
 
     <slot name="content">
       <div class="v-step__content">
-        <div v-if="step.content" v-html="step.content"></div>
+        <div v-if="step.content" v-html="step.content" class="text-body-2 text--secondary"></div>
         <div v-else>This is a demo step! The id of this step is {{ hash }} and it targets {{ step.target }}.</div>
       </div>
     </slot>
@@ -290,6 +290,10 @@ export default {
   }
 
   /* Custom */
+
+  .v-step__embed {
+    margin-bottom: 1rem;
+  }
 
   .v-step__header {
     margin: -1rem -1rem 0.5rem;
